@@ -3,9 +3,14 @@ import math
 prueba="0"
 while prueba=="0":
     U=input("Introduzca el orden de su rotación:")
+    orden=int(U)
     U=(2*math.pi/int(U))/2
+    l=[]
     for i in [1,2,3,4,6]:
-        for j in [1,2,3,4,6]:
+        if i!= orden:
+            l.append(i)
+    for i in l:
+        for j in l:
             V=(2*math.pi/i)/2
             W=(2*math.pi/j)/2
             c=(math.cos(W)+math.cos(U)*math.cos(V))/(math.sin(U)*math.sin(V))
